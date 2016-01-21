@@ -1,2 +1,3 @@
 # PunchCardRecords
 仅针对于个人制作的考勤辅助软件
+这是一个NetBeans的JavaSwing程序,使用的为poi.jar读写excel
