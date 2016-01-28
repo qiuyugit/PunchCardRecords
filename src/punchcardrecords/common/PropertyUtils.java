@@ -23,6 +23,7 @@ public class PropertyUtils {
      */
     private static Properties instance(){
         Properties propertis = new Properties();
+        // 在NetBeans的开发调试过程中,文件读取可能失败,此时清理并构建一下就好
         InputStream in = PropertyUtils.class.getResourceAsStream("/resources/properties/properties.properties");
         try {
             propertis.load(in);
