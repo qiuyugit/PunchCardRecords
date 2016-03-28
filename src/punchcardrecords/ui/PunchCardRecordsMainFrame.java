@@ -225,12 +225,13 @@ public class PunchCardRecordsMainFrame extends javax.swing.JFrame {
      * 根据给定的进度判断进度条的增加
      * @param process 要更新的进度 
      */
-    private void addBar(int process){
+    private void addBar(final int process){
         new Thread(new Runnable() {
 
             @Override
             public void run() {
                 int value = progressBar.getValue();
+                // 线程中使用外部函数的变量需要将其静态化
                 progressBar.setValue(value+process);
                 DecimalFormat df = new DecimalFormat("#0.00");
                 progressBar.setString("解析已完成:"+df.format(progressBar.getPercentComplete()*100)+"%");
